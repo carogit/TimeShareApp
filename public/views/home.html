@@ -1,0 +1,25 @@
+<div class="container" ng-controller="AppCtrl">
+            <h1>WELCOME à l'ACCUEIL</h1>
+<table class="table">
+                <thead>
+                    <tr>
+                        <th>type</th>
+                        <th>Auteur</th>
+                        <th>Localisation</th>
+                        <th>Description</th>
+                        <th>Créee le</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="advert in advertslist">
+                        <td>{{advert.type}}</td>
+                        <td>{{advert.author}}</td>
+                        <td>{{advert.loc}}</td>
+                        <td>{{advert.content}}</td>
+                        <td>{{advert.created_at}}</td>
+                    </tr>
+                </tbody>
+            </table>
+           
+        </div>

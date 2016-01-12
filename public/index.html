@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">     
+        
+        <title>TimeShare App</title>
+    </head>
+    
+    <body ng-app="TimeShareApp">
+        
+<!--<div class="container" ng-view=""></div>-->
+
+<nav>
+            <a href="home" class="btn btn-primary">Page d'accueil</a>
+          
+        </nav>
+        <div class="container" ng-controller="AppCtrl">
+            <h1>Liste des annonces</h1>
+        
+             <table class="table">
+                <thead>
+                    <tr>
+                        <th>type</th>
+                        <th>Auteur</th>
+                        <th>Localisation</th>
+                        <th>Description</th>
+                        <th>Créee le</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                         <td><input class="form-control" ng-model="advert.type"></td>
+                        <td><input class="form-control" ng-model="advert.author"></td>
+                        <td><input class="form-control" ng-model="advert.loc"></td>
+                        <td><input class="form-control" ng-model="advert.content"></td>
+                        <td><input class="form-control" ng-model="advert.created_at"></td>
+                        <td><button class="btn btn-primary" ng-click="addAdvert()">Déposer une annonce</button></td>
+                        <td><button class="btn btn-info" ng-click="updateAdvert()">Mettre à jour</button>&nbsp;&nbsp;
+                            <button class="btn btn-info" ng-click="deselect()">Clear</button></td>
+                
+                    </tr>
+                    <tr ng-repeat="advert in advertslist">
+                        <td>{{advert.type}}</td>
+                        <td>{{advert.author}}</td>
+                        <td>{{advert.loc}}</td>
+                        <td>{{advert.content}}</td>
+                        <td>{{advert.created_at}}</td>
+                        <td><button class="btn btn-danger" ng-click="removeAdvert(advert._id)">Supprimer</button></td>
+                        <td><button class="btn btn-warning" ng-click="editAdvert(advert._id)">Editer les infos</button></td>
+                    </tr>
+                </tbody>
+            </table>
+           
+        </div>
+        
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js"></script>
+        <!--<script src="scripts/appDependencies.js"></script>-->
+        <!--<script src="scripts/routing.js"></script>-->
+        <script src="scripts/controllers/appAngController.js"></script>
+        <!--<script src="scripts/controllers/homeAngController.js"></script>-->
+       
+    </body>
+</html>
+
+
+
+       
+  
